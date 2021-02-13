@@ -17,10 +17,16 @@ bool compareEstudantes(Estudante a, Estudante b)
     float rsgB = b.calcularRSG();
     
     if(rsgA != rsgB){
-        return rsgA < rsgB;
+        return rsgA < rsgB; // suponha {5,9,4}, isso oganiza a lista como : {4,5,9}, ou seja, estudantes com maior rsg são colocados mais a direita
     }
 
-    return (a.matricula > b.matricula);
+    return (a.matricula > b.matricula); // suponha {5,9,4}, isso organiza a lista como: {9,5,4}, ou seja, estudantes com menor matrícula são colocadas mais a esquerda.
+
+    // imagina notas iguais {80,80,80}, sendo assim, essas notas não entram no primeiro if, entrando no segundo,
+    // o segundo faz a classificação baseado nas matrículas, logo, estudantes com memso rsg são classificados colocando
+    // os de menor matrícula mais a direita.
+    //dupla classificação, primeiro por rsg depois pela matrícula, 
+    // mais detalhes consulte as referêcias: [1], [5]
 
 }
 
